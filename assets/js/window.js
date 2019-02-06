@@ -70,43 +70,52 @@ var contacts = [
 ]
 
 var nameArray = [],
-		phoneArray = [];
+	phoneArray = [];
 /*===========================================
 function fixInValues take an object as an argument
 =================================================*/
 function fixInValues(contacts){
-	contacts.forEach(contact => {
-		if (nameArray == '') {
-			nameArray.push(contact.name)
-		} else {
-			nameArray.forEach((name) =>{
-				if (name != contact.name) {
-					nameArray.push(contact.name);
-				}
-			})
-		}
 		
 		phoneArray.push(contact.phone);
 		appendData(contact.name, contact.phone)
-	});
 }
 
 function addObject(contact){
-		if (nameArray.length < 1) {
-			contact.forEach((name) =>{
-				nameArray.push(name.name);
+	//add person name to nameArray
+		if(nameArray.length < 1){
+			contact.forEach((person) =>{
+				nameArray.push(person.name);
 			})
 		}else{
-			for(let i = 0; i < nameArray.length; i++){
-				const arrayOfName = nameArray[i];
-				for(let x = 0; x < contact.length; x++){
-					if (arrayOfName == contact[x].name) {
-						nameArray.pop(contact[x].name);	
-						nameArray.push(contact[x].name);																
-					}
+			contact.forEach((newPerson) => {
+				if (!nameArray.indexOf(newPerson.name)) {
+					nameArray.push(newPerson.name);
 				}
-			}
-		}	
+			})
+			nameArray.pop();
+		}
+		//add person phone to phoneArray
+		if(phoneArray.length < 1){
+			contact.forEach((person) =>{
+				phoneArray.push(person.phone);
+			})
+		}else{
+			contact.forEach((newPerson) => {
+				if (!phoneArray.indexOf(newPerson.phone)) {
+					phoneArray.push(newPerson.phone);
+				}
+			})
+			phoneArray.pop();
+		}
+		
+		console.log(nameArray, phoneArray);
+		
+		appendData(nameArray, phoneArray)
+			let inlineDiv = mainContainer.querySelectorAll('h5');
+		console.log(Array.from(inlineDiv).values());
+
+		
+		
 }
 
 //========creates a new element and appends the data to it=============
