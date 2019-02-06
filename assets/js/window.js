@@ -146,8 +146,12 @@ function appendData(name, phone) {
 	mainContentContainer.appendChild(divElement);
 }
 
+var caption = document.querySelector('#caption');
 var hub = document.querySelector('.hub');
-hub.addEventListener('click', function () {
+hub.addEventListener('click', function (e) {
+	var valueOfClicked = e.target.value;
+	caption.textContent = valueOfClicked;
+	
 	// fixInValues(contacts);
 	addObject(contacts);
 })
@@ -176,5 +180,7 @@ setInterval(() => {
 	}
 	displayTime.innerHTML = d.getHours() + ":" + d.getMinutes();
 	displayDate.innerHTML = dayArray[d.getDay()] + " " + monthArray[d.getMonth()];
-
 }, 1000);
+
+// fix caption
+
