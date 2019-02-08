@@ -54,6 +54,30 @@ tableData.forEach((td) => {
 	})
 })
 
+var deleteToggler = document.querySelector('#caption button.toggleDelete');
+
+deleteToggler.addEventListener('click', function (e) {
+	var deleteBox = mainContainer.querySelectorAll('div.deleteBox');
+	e.stopPropagation();
+	deleteBox.forEach(box => {
+		box.classList.toggle('disappear');
+	});
+
+	deleteBox.forEach(element => {
+		element.addEventListener('click', () => {
+			element.parentElement.remove();
+		})
+	});
+})
+
+var menuToggler = document.querySelector('.menuToggler');
+var menuWindow = document.querySelector('.menu-window');
+	menuToggler.addEventListener('click', e =>{
+		console.log(e);
+		
+		menuWindow.classList.toggle('slideShow');
+	})
+
 //=============== contacts object ==============
 var contacts = [{
 		name: 'Nick',
@@ -97,16 +121,40 @@ var contacts = [{
 	}
 ]
 
+
+//creates a new element and appends the data to it
+function appendData(name, phone) {
+
+	var divElement = document.createElement('div');
+	var pElement = document.createElement('p');
+
+	divElement.innerHTML =
+		'<div class="iconBox box"><span><i class="fa fa-user"></i></span></div>' +
+		'<div class="contactInfo box">' +
+		'<div class="nameInfo"><h5>' + name + '</h5></div>' +
+		'<div class="phoneInfo">' + phone + '</div>' +
+		'</div>' +
+		'<div class="deleteBox disappear box"><span><i class="far fa-trash-alt"></i></span></div>';
+
+	divElement.append(pElement);
+	divElement.className = 'contactedList';
+	mainContentContainer.appendChild(divElement);
+}
+
+//set main content header
+var caption = document.querySelector('#caption h3');
+var hubs = document.querySelectorAll('.hub');
+hubs.forEach(hub => {
+	hub.addEventListener('click', function (e) {
+		var valueOfClicked = e.target.value;
+		caption.innerHTML = valueOfClicked;
+		addObject(contacts);
+	})
+});
+
+//function addObject take an object as an argument
 var nameArray = [],
 	phoneArray = [];
-/*===========================================
-function fixInValues take an object as an argument
-=================================================*/
-function fixInValues(contacts) {
-
-	phoneArray.push(contact.phone);
-	appendData(contact.name, contact.phone)
-}
 
 function addObject(contact) {
 	//add person name to nameArray && person phone to phoneArray
@@ -125,43 +173,13 @@ function addObject(contact) {
 		nameArray.pop();
 		phoneArray.pop();
 	}
-	console.log(nameArray, phoneArray);
-	appendData(nameArray, phoneArray)
+
+	if (!mainContentContainer.hasChildNodes()) {
+		for (let i = 0; i < nameArray.length; i++) {
+			appendData(nameArray[i], phoneArray[i]);
+		}
+	}
 }
-
-//========creates a new element and appends the data to it=============
-function appendData(name, phone) {
-
-	var divElement = document.createElement('div');
-	var pElement = document.createElement('p');
-
-	divElement.innerHTML =
-		'<div class="iconBox box"><span><i class="fa fa-user"></i></span></div>' +
-		'<div class="contactInfo box">' +
-		'<div class="nameInfo"><h5>' + name + '</h5></div>' +
-		'<div class="phoneInfo">' + phone + '</div>' +
-		'</div>' +
-		'<div class="deleteBox box"><span><i class="fa fa-user"></i></span></div>';
-
-	divElement.append(pElement);
-	divElement.className = 'contactedList';
-	mainContentContainer.appendChild(divElement);
-}
-
-var caption = document.querySelector('#caption h3');
-var hub = document.querySelector('.hub');
-hub.addEventListener('click', function (e) {
-	var valueOfClicked = e.target.value;
-	caption.innerHTML = valueOfClicked;
-
-	// fixInValues(contacts);
-	addObject(contacts);
-})
-
-function removeElement(element) {
-
-}
-
 //================= end of fixInValues =================
 
 
