@@ -126,12 +126,7 @@ function addObject(contact) {
 		phoneArray.pop();
 	}
 	console.log(nameArray, phoneArray);
-
-
 	appendData(nameArray, phoneArray)
-
-
-
 }
 
 //========creates a new element and appends the data to it=============
@@ -140,18 +135,25 @@ function appendData(name, phone) {
 	var divElement = document.createElement('div');
 	var pElement = document.createElement('p');
 
-	divElement.innerHTML = "<div class='iconDiv'><span><i class='fa fa-user'></i></span></div><div class='inlineDiv'><h5>" + name + "</h5><p>" + phone + "</p></div>";
+	divElement.innerHTML =
+		'<div class="iconBox box"><span><i class="fa fa-user"></i></span></div>' +
+		'<div class="contactInfo box">' +
+		'<div class="nameInfo"><h5>' + name + '</h5></div>' +
+		'<div class="phoneInfo">' + phone + '</div>' +
+		'</div>' +
+		'<div class="deleteBox box"><span><i class="fa fa-user"></i></span></div>';
+
 	divElement.append(pElement);
 	divElement.className = 'contactedList';
 	mainContentContainer.appendChild(divElement);
 }
 
-var caption = document.querySelector('#caption');
+var caption = document.querySelector('#caption h3');
 var hub = document.querySelector('.hub');
 hub.addEventListener('click', function (e) {
 	var valueOfClicked = e.target.value;
-	caption.textContent = valueOfClicked;
-	
+	caption.innerHTML = valueOfClicked;
+
 	// fixInValues(contacts);
 	addObject(contacts);
 })
@@ -183,4 +185,3 @@ setInterval(() => {
 }, 1000);
 
 // fix caption
-

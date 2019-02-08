@@ -5,6 +5,7 @@ body,
   margin: 0;
   box-sizing: border-box;
   font-family: arial;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html,
@@ -119,7 +120,7 @@ td>span.icon {
 }
 
 .slide-nav-toggles i {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .eight {
@@ -167,7 +168,8 @@ td>span.icon {
   color: white;
 }
 
-.sidebar-container .sidebar-ul-container  button.hub {
+
+.sidebar-container .sidebar-ul-container button.hub {
   width: 100%;
   display: block;
   text-align: left;
@@ -184,10 +186,11 @@ td>span.icon {
   -o-transition: 0.3s linear;
   transition: 0.3s linear;
   font-size: 20px;
+  outline: none;
 }
 
-.sidebar-container .sidebar-ul-container  button.hub:hover,
-.sidebar-container .sidebar-ul-container  button.hub:focus {
+.sidebar-container .sidebar-ul-container button.hub:hover,
+.sidebar-container .sidebar-ul-container button.hub:focus {
   background-color: skyblue;
 }
 
@@ -195,9 +198,9 @@ td>span.icon {
   background: skyblue;
 }
 
-.sidebar-container .sidebar-ul-container  button.hub span {
+.sidebar-container .sidebar-ul-container button.hub span {
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /* =============================================================== */
@@ -312,6 +315,7 @@ td>span.icon {
   padding: 15px;
   padding-left: 0;
   position: relative;
+  height: 70px;
 }
 
 .contactedList:last-child {
@@ -319,37 +323,41 @@ td>span.icon {
 }
 
 .contactedList:hover {
-  background: rgb(134, 188, 219);
+  background: rgba(134, 187, 217, 0.267);
 }
 
+.contactedList .box{
+  display: inline-block;
+  float: left;
+  height: 100%;
+}
 .contactedList h5 {
   font-size: 115%;
 }
-
-.iconDiv,
-.inlineDiv {
-  display: inline-block;
-}
-
-.iconDiv {
-  width: 50px;
+.contactedList .iconBox, .contactedList .deleteBox{
+  width: 60px;
+  margin-left: 10px;
   height: 100%;
   text-align: center;
-  margin-left: 5px;
-  font-size: 140%;
-  line-height: 100%;
+}
+.contactedList .deleteBox{
+  float: right;
+  background: olive;
+}
+.contactedList .contactInfo {
+  padding-left: 10px;
+  padding-right: 25px;
+  border-left: 1px solid #0e0e0e48;
+  border-right: 1px solid #0e0e0e48;
 }
 
-.iconDiv span {
-  margin: auto;
-  color: #ffc400;
-}
 
 .highlight {
-  background: blueviolet;
+  border-bottom: 2px solid skyblue;
 }
 
 #caption {
+  position: relative;
   position: fixed;
   top: 40px;
   width: 100%;
@@ -357,4 +365,24 @@ td>span.icon {
   background: #f0f0f0;
   border-bottom: 2px solid #445885;
   z-index: 1300;
+}
+
+#caption h3{
+  line-height: 70px;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+#caption button.toggleDelete{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 70px;
+  margin: auto 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-left: 1px solid #0e0e0e48;
+  text-align: center;
 }
