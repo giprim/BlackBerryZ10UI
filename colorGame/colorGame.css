@@ -1,0 +1,56 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: black;
+	color: #fff;
+}
+
+div.header{
+	height: 200px;
+	background-color: #ccc;
+	text-align: center;
+	font-size: 130%;
+	color: green;
+}
+
+div.container{
+	width: 60%;
+	margin: 0 auto;
+
+}
+
+.colorBox{
+	width: 30%;
+	height: 300px;
+	margin:1.06%;
+	/*border:1px white solid;*/
+	float: left;
+	border-radius: 5px;
+}
+
+.setting{
+	height: 50px;
+	width: 100%;
+	background: #fff;
+	color: black;
+	text-align: center;
+}
+.setting > p{
+	max-width: 58%;
+	height: inherit;
+	margin: 0 auto;
+	background: skyblue;
+	height: 100%;
+	line-height: 100%;
+}
+
+#status{
+	width: 150px;
+	height: 35px;
+	color: white;
+	background: black;
+	display: inline-block;
+}

@@ -79,47 +79,30 @@ var menuWindow = document.querySelector('.menu-window');
 	})
 
 //=============== contacts object ==============
-var contacts = [{
-		name: 'Nick',
-		phone: '09037485728'
-	},
-	{
-		name: 'Peter',
-		phone: '09019785728'
-	},
-	{
-		name: 'Johnson',
-		phone: '08099485728'
-	},
-	{
-		name: 'Steven',
-		phone: '09033365728'
-	},
-	{
-		name: 'Stacy',
-		phone: '09036665728'
-	},
-	{
-		name: 'Treasure',
-		phone: '07037483328'
-	},
-	{
-		name: 'Ella',
-		phone: '08167485728'
-	},
-	{
-		name: 'Queen',
-		phone: '07047485728'
-	},
-	{
-		name: 'Beyonce',
-		phone: '09039940728'
-	},
-	{
-		name: 'Victor',
-		phone: '08037485728'
-	}
-]
+var contacts = 
+[
+	{name: 'Nick', phone: '09037485728'},
+	{name: 'Peter',	phone: '09019785728'},
+	{name: 'Johnson',	phone: '08099485728'},
+	{name: 'Steven', phone: '09033365728'},
+	{name: 'Stacy',	phone: '09036665728'},
+	{name: 'Treasure', phone: '07037483328'},
+	{name: 'Ella', phone: '08167485728'},
+	{name: 'Queen',	phone: '07047485728'},
+	{name: 'Beyonce',	phone: '09039940728'},
+	{name: 'Victor', phone: '08037485728'},
+	{name: 'Queen',	phone: '07047485728'},
+	{name: 'Beyonce',	phone: '09039940728'},
+	{name: 'Victor', phone: '08037485728'},
+	{name: 'Treasure', phone: '07037483328'},
+	{name: 'Ella', phone: '08167485728'},
+	{name: 'Queen',	phone: '07047485728'},
+	{name: 'Beyonce',	phone: '09039940728'},
+	{name: 'Victor', phone: '08037485728'},
+	{name: 'Queen',	phone: '07047485728'},
+	{name: 'Beyonce',	phone: '09039940728'},
+	{name: 'Victor', phone: '08037485728'}
+];
 
 
 //creates a new element and appends the data to it
@@ -198,7 +181,7 @@ setInterval(() => {
 	if (d.getHours() >= 11) {
 		am_pm = 'pm';
 	}
-	displayTime.innerHTML = d.getHours() + ":" + d.getMinutes();
+	displayTime.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 	displayDate.innerHTML = dayArray[d.getDay()] + " " + monthArray[d.getMonth()];
 }, 1000);
 
