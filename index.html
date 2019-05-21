@@ -4,11 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="assets/fontawesome/all.css"> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-    crossorigin="anonymous">
+  <title>BlackBerry Z10</title>
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -69,7 +66,6 @@
   <div id="body">
     <!-- ======== SIDE BAR ========== -->
     <div id="sidebar" class="sidebar">
-
       <div class="sidebar-container">
         <div class="user">
           <div class="pic">
@@ -77,9 +73,7 @@
           </div>
           <p class="owner">Gi-prim</p>
         </div>
-
         <div class="sidebar-ul-container">
-
           <button type="menu" class="hub" value="BlackBerry Hub"> <span ><i class="far fa-comments"></i></span>Hub</button>
           <button type="menu" class="hub" value="Priority Hub"> <span ><i class="fas fa-long-arrow-alt-up"></i></span>Priority Hub</button>
           <button type="menu" class="hub" value="Notification"> <span ><i class="fas fa-bell"></i></span>Notification</button>
@@ -91,7 +85,8 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- the content window -->
     <div id="main-container" class="mainContainer">
       <div id="caption">
         <h3></h3>
@@ -102,41 +97,50 @@
         <div class="sidebar-toggler" tabindex='1'><i class="fas fa-bars"></i> </div>
         <div class="settings-toggler"> <i class="fas fa-ellipsis-v"></i> </div>
       </div>
-      <div class="menuToggler"><span><i class="fas fa-angle-double-left"></i></span></div>      
+      <div class="menuToggler"><span class="faLeft"><i class="fas fa-angle-double-left"></i></span></div>      
     </div>
-
+    <!-- the right navigation window -->
     <div class="right_setting ">
       <div class="right_setting_item">
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>To Top</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>To Bottom</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Attachments</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Compose</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Search</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Settings</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Refresh</button>
-          <button type="menu" class="setting_item"> <span ><i class="far fa-comments"></i></span>Select More</button>
+          <button type="menu" class="setting_item"> <span ><i class="fa fa-angle-double-up"></i></span>To Top</button>
+          <button type="menu" class="setting_item"> <span ><i class="fa fa-angle-double-down"></i></span>To Bottom</button>
+          <button type="menu" class="setting_item"> <span ><i class="fas fa-paperclip"></i></span>Attachments</button>
+          <button type="menu" class="setting_item"> <span ><i class="far fa-edit"></i></span>Compose</button>
+          <button type="menu" class="setting_item"> <span ><i class="fas fa-search"></i></span>Search</button>
+          <button type="menu" class="setting_item"> <span ><i class="fas fa-cog"></i></span>Settings</button>
+          <button type="menu" class="setting_item"> <span ><i class="fas fa-redo"></i></span>Refresh</button>
+          <button type="menu" class="setting_item"> <span ><i class="fas fa-check-square"></i></span>Select More</button>
       </div>
     </div>
+    <!-- the menu window -->
     <div class="menu-window">
       <div class="menu-window-contain">
+        <div class="menu">
+          <div class="todoList"></div>
+          <div class="menuName">To-Do List</div>
+        </div>
+        <div class="menu">
+          <div class="colorGame"></div>
+          <div class="menuName">Color Game</div>
+        </div>
         <div class="menu"></div>
-        <div class="menu"></div>
-        <div class="menu"></div>
-        <div class="menu"></div>
+        <div class="menu">
+          <div class="about"></div>
+          <div class="menuName">About</div>
+        </div>
       </div>
       <div class="menu_bottom_panel">
-        <div class="panelIcon"></div>
-        <div class="panelIcon"></div>
-        <div class="panelIcon"></div>
-        <div class="panelIcon"></div>
+        <div class="panelIcon iconback"><span><i class="fa fa-angle-left"></i></span></div>
+        <div class="panelIcon iconcall"><span><i class="fa fa-phone"></i></span></div>
+        <div class="panelIcon iconcam"><span><i class="fa fa-camera"></i></span></div>
       </div>
     </div>
 
   </div>
 
-  <script src="assets/js/jquery-3.1.0.min.js" charset="utf-8"></script>
-  <script src="assets/js/window.js" charset="utf-8"></script>
-  <script src="assets/js/mainJquery.js" charset="utf-8"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/jquery-3.1.0.min.js" charset="utf-8"></script>
+  <script language="javascript" type="module" src="assets/js/window.js" charset="utf-8"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/mainJquery.js" charset="utf-8"></script>
 
 </body>
 

@@ -1,4 +1,6 @@
-var mainContainer = document.querySelector('#main-container');
+
+
+var mainContainer = document.querySelector('	#main-container');
 var mainContentContainer = document.querySelector('.mainContentContainer');
 var sidebar = document.querySelector('#sidebar');
 var navbar = document.querySelector('#nav');
@@ -72,47 +74,39 @@ deleteToggler.addEventListener('click', function (e) {
 
 var menuToggler = document.querySelector('.menuToggler');
 var menuWindow = document.querySelector('.menu-window');
-	menuToggler.addEventListener('click', e =>{
-		console.log(e);
-		
-		menuWindow.classList.toggle('slideShow');
-	})
+menuToggler.addEventListener('click', () => {
+	menuWindow.classList.remove('slideShow');
+})
+var menuWindowBack = document.querySelector('.iconback');
+menuWindowBack.addEventListener('click', () => {
+	menuWindow.classList.add('slideShow');
+})
 
-//=============== contacts object ==============
-var contacts = 
-[
-	{name: 'Nick', phone: '09037485728'},
-	{name: 'Peter',	phone: '09019785728'},
-	{name: 'Johnson',	phone: '08099485728'},
-	{name: 'Steven', phone: '09033365728'},
-	{name: 'Stacy',	phone: '09036665728'},
-	{name: 'Treasure', phone: '07037483328'},
-	{name: 'Ella', phone: '08167485728'},
-	{name: 'Queen',	phone: '07047485728'},
-	{name: 'Beyonce',	phone: '09039940728'},
-	{name: 'Victor', phone: '08037485728'},
-	{name: 'Queen',	phone: '07047485728'},
-	{name: 'Beyonce',	phone: '09039940728'},
-	{name: 'Victor', phone: '08037485728'},
-	{name: 'Treasure', phone: '07037483328'},
-	{name: 'Ella', phone: '08167485728'},
-	{name: 'Queen',	phone: '07047485728'},
-	{name: 'Beyonce',	phone: '09039940728'},
-	{name: 'Victor', phone: '08037485728'},
-	{name: 'Queen',	phone: '07047485728'},
-	{name: 'Beyonce',	phone: '09039940728'},
-	{name: 'Victor', phone: '08037485728'}
-];
+let todoDiv = document.querySelector('.todoList');
+todoDiv.addEventListener('click', e => {
+	location.replace('TodoLproject/todoList.html');
 
+})
 
-//creates a new element and appends the data to it
-function appendData(name, phone) {
+let colorGame = document.querySelector('.colorGame');
+colorGame.addEventListener('click', e => {
+	location.replace('./colorGame/colorGame.html');
 
+})
+let about = document.querySelector('.about');
+about.addEventListener('click', e => {
+	location.replace('about.html');
+
+})
+
+let camera = document.querySelector('.iconcam');
+
+function appendData(name, phone, fontawesome) {
 	var divElement = document.createElement('div');
 	var pElement = document.createElement('p');
 
 	divElement.innerHTML =
-		'<div class="iconBox box"><span><i class="fa fa-user"></i></span></div>' +
+		'<div class="iconBox box"><span><i class="' + fontawesome + '"></i></span></div>' +
 		'<div class="contactInfo box">' +
 		'<div class="nameInfo"><h5>' + name + '</h5></div>' +
 		'<div class="phoneInfo">' + phone + '</div>' +
@@ -124,22 +118,87 @@ function appendData(name, phone) {
 	mainContentContainer.appendChild(divElement);
 }
 
+function mainContentContainerRemover() {
+	while (mainContentContainer.firstChild) {
+		mainContentContainer.firstChild.remove();
+	}
+}
 //set main content header
 var caption = document.querySelector('#caption h3');
 var hubs = document.querySelectorAll('.hub');
 hubs.forEach(hub => {
 	hub.addEventListener('click', function (e) {
+		mainContentContainerRemover();
 		var valueOfClicked = e.target.value;
 		caption.innerHTML = valueOfClicked;
-		addObject(contacts);
+
+		switch (valueOfClicked) {
+			case 'BlackBerry Hub':
+				addObject(object, 'far fa-comments');
+				break;
+
+			case 'Priority Hub':
+				addObject(priority, 'fas fa-long-arrow-alt-up');
+				break;
+
+				case 'Notification':
+					mainContentContainerRemover();
+					addObject(Notification, 'fas fa-bell');
+					break;
+
+				case 'BlackBerry Messager':
+					mainContentContainerRemover();
+					addObject(Messager, 'fab fa-blackberry');
+					break;
+
+				case 'Text Messages':
+					mainContentContainerRemover();
+					addObject(TextMessage, 'fas fa-comment-alt');
+					break;
+
+				case 'Calls Hub':
+					mainContentContainerRemover();
+					addObject(Calls, 'fas fa-phone');
+					break;
+
+				case 'PIN Hub':
+					mainContentContainerRemover();
+					addObject(PIN, 'fas fa-mobile-alt');
+					break;
+
+				case 'Voice Mail':
+					mainContentContainerRemover();
+					addObject(VoiceMail, 'far fa-sticky-note');
+					break;
+
+		}
 	})
 });
+
+
+//=============== contacts object ==============
+import {
+	object, priority, Notification, Messager, TextMessage, Calls, PIN, VoiceMail
+} from './data.js';
+
+
 
 //function addObject take an object as an argument
 var nameArray = [],
 	phoneArray = [];
 
-function addObject(contact) {
+//set nameArray, PhoneArray to empty
+function emptyArrays() {
+	nameArray = [];
+	phoneArray = [];
+}
+
+addObject(object, 'far fa-comments');
+caption.textContent = 'BlackBerry Hub';
+
+function addObject(contact, font) {
+	//empty the arrays
+	emptyArrays()
 	//add person name to nameArray && person phone to phoneArray
 	if (nameArray.length < 1 && phoneArray.length < 1) {
 		contact.forEach((person) => {
@@ -159,11 +218,11 @@ function addObject(contact) {
 
 	if (!mainContentContainer.hasChildNodes()) {
 		for (let i = 0; i < nameArray.length; i++) {
-			appendData(nameArray[i], phoneArray[i]);
+			appendData(nameArray[i], phoneArray[i], font);
 		}
 	}
 }
-//================= end of fixInValues =================
+//================= end of addObject =================
 
 
 var displayTime = document.querySelector('span.time');
@@ -184,5 +243,3 @@ setInterval(() => {
 	displayTime.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 	displayDate.innerHTML = dayArray[d.getDay()] + " " + monthArray[d.getMonth()];
 }, 1000);
-
-// fix caption

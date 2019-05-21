@@ -36,6 +36,7 @@ nav.nav {
   background: black;
   color: white;
   position: relative;
+  box-shadow: -2px 3px 30px grey;
 }
 
 nav .static-nav {
@@ -170,7 +171,7 @@ td>span.icon {
 }
 
 
-.sidebar-container .sidebar-ul-container button.hub, 
+.sidebar-container .sidebar-ul-container button.hub,
 .right_setting_item button
  {
   width: 100%;
@@ -201,9 +202,9 @@ td>span.icon {
   background: skyblue;
 }
 
-.sidebar-container .sidebar-ul-container button.hub span {
+.sidebar-container .sidebar-ul-container button.hub span, .right_setting_item span {
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /* =============================================================== */
@@ -316,7 +317,7 @@ td>span.icon {
 }
 
 .right_setting_item button{
-  
+
 }
 
 .right_setting_toggle {
@@ -426,23 +427,23 @@ td>span.icon {
 
 .menu-window {
   z-index: 1200;
-  display: none;
+  display: block;
   position: relative;
   position: absolute;
-  right: -1920px;
+  right: 0;
   height: 100%;
   width: 100%;
-  background: rgb(2, 2, 2);
+  background: rgb(0, 0, 0);
   box-shadow: rgba(34, 34, 34, 0.493) -8px 0 15px;
-  transition: right 1s ease;
-  -o-transition: right 1s ease;
-  -moz-transition: right 1s ease;
-  -webkit-transition: right 1s ease;
+  transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
 }
 
 .slideShow {
-  display: block;
-  right: 0;
+  display: none;
+  right: -1920px;
 }
 
 .menu_bottom_panel {
@@ -451,8 +452,11 @@ td>span.icon {
   position: fixed;
   bottom: 0 !important;
   width: 100%;
-  background: linear-gradient(180deg, #020202a4, #1d1c1c 40%);
+  background: rgba(0, 0, 0, 0.849);
   z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
 }
 
 .menuToggler {
@@ -493,14 +497,76 @@ td>span.icon {
 }
 .menu{
   background: #000;
-  border: 2px #fff solid;
+  border-radius: 5%;
   width: 350px;
   justify-self: center;
+  box-shadow: -2px 3px 30px black;
+  overflow: hidden;
+  position: relative;
 }
 
 .panelIcon{
   display: inline-block;
   width: 70px;
   height: 100%;
-  border: 2px white solid;
+  display: flex;
+  color: white;
+  cursor: pointer;
+}
+
+.iconcall{
+  grid-column: 4/5;
+  justify-self: end;
+}
+.iconcam{
+  grid-column: 8/9;
+  justify-self: end;
+}
+
+.panelIcon span{
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+.faLeft{
+  margin: 20px auto;
+}
+
+.todoList{
+  height: 100%;
+  width:100%;
+  background: url('../img/todo.png') no-repeat;
+  background-position: top left;
+  background-size: cover;
+  cursor: pointer;
+}
+.colorGame{
+  height: 100%;
+  width:100%;
+  background: url('../img/color_game.png') no-repeat;
+  background-position: top left;
+  background-size: cover;
+  cursor: pointer;
+}
+.about{
+  height: 100%;
+  width:100%;
+  background: url('../img/about.png') no-repeat;
+  background-position: top left;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.menuName{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.527);
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
 }

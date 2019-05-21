@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
 	background-color: black;
@@ -9,26 +10,33 @@ body{
 }
 
 div.header{
+	padding: 20px 0;
 	height: 200px;
-	background-color: #ccc;
+	background-color: steelblue;
 	text-align: center;
 	font-size: 130%;
-	color: green;
+	color: whitesmoke;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.1;
+}
+
+.colorValue{
+	font-size: 200%;
 }
 
 div.container{
-	width: 60%;
-	margin: 0 auto;
-
+	width: 45%;
+	margin: 20px auto;
 }
 
 .colorBox{
 	width: 30%;
-	height: 300px;
+	height: 250px;
 	margin:1.06%;
-	/*border:1px white solid;*/
 	float: left;
-	border-radius: 5px;
+	border-radius: 15%;
+	transition: background .4s linear;
 }
 
 .setting{
@@ -47,10 +55,51 @@ div.container{
 	line-height: 100%;
 }
 
-#status{
-	width: 150px;
-	height: 35px;
-	color: white;
-	background: black;
+.status{
+	width: 20%;
+	color: rgb(14, 13, 13);
 	display: inline-block;
+}
+
+.active {
+	background: steelblue;
+	color: #fff;
+}
+
+button{
+	border: none;
+	background: none;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	padding: 5px 10px;
+	transition: .2s linear;
+}
+
+button:hover{
+	background: steelblue;
+	color: #fff;
+}
+
+.iconback{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 60px;
+  height: 60px;
+  color: black;
+  display: flex;
+  border: 1px white solid;
+  cursor: pointer;
+}
+.iconback:hover{
+  background: #ffffff57;
+}
+
+.iconback i {
+  margin: auto;
+  color: #fff;
+  font-size: 30px;
 }

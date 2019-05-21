@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <style>
+    body{
+      padding-top: 10%;
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 400;
+    }
+  .iconback{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+    color: black;
+    display: flex;
+    border: 1px white solid;
+    cursor: pointer;
+  }
+  .iconback:hover{
+    background: #88888857;
+  }
+
+  .iconback i {
+    margin: auto;
+    color: rgb(104, 101, 101);
+    font-size: 30px;
+  }
+
+  .container{
+    height: 100%;
+    display: flex;
+  }
+  main{
+    margin: auto;
+    font-size: 130%;
+    color: #444;
+    text-align: center;
+  }
+
+  .logo{
+    height: 300px;
+    width: 300px;
+    position: relative; 
+    box-shadow: 0 1px 10px rgb(68, 68, 68);
+    margin: 0 auto;
+  }
+
+  .logo img{
+   filter:contrast(110%), saturate(20);
+    width: 100%;
+    height: 100%;
+  }
+
+  p{
+    font-weight: 500;
+  }
+
+  </style>
+</head>
+  <body>
+    <div class="container">
+      <main>
+        <div class="logo">
+            <img src="assets/img/gi.jpg" alt="owner's-img">
+        </div>
+        <p><b>Developer:</b> G.I. Ngozi</p>
+        <p><b>Project:</b> BlackBerry Z10</p>
+        <p><b>Version:</b> 1.0.1</p>
+        <p><b>Powered By:</b> Saturday Night (Khalid)</p>
+        <p>
+          Special thanks to Mr. Greatness Akuma, Mr. Dickson G.
+          for their support. 
+        </p>
+        <p>
+          Thanks to my unknown wife and unborn children for not distracting me while i was coding.
+        </p>
+        
+      </main>
+    </div>
+    <div class="iconback"><i class="fa fa-angle-left"></i></div>
+    <script>
+      let iconback = document.querySelector('.iconback');
+      iconback.addEventListener('click', () => {
+        location.replace('index.html')
+      });
+    </script>
+  </body>
+</html>
